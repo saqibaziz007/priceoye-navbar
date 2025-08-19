@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Left Sidebar Navbar</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="left">
+      <!-- Custom Hamburger -->
+      <div class="hamburger" onclick="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="logo"><img src="https://static.priceoye.pk/images/logo.svg" alt="logo"></div>
+    </div>
+    <div class="search">
+      <input id="search" type="text" placeholder="Search...">
+      <img src="https://static.priceoye.pk/icons/mic-blue.svg" alt="mic-blue">
+    </div>
+    <div class="buttons">
+      <button class="login">Login</button>
+      <button class="register">Register</button>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()"><i class="fa-solid fa-xmark"></i></span>
+    <div class="hamburger-nav">
+
+      <div class="hamburger-nav-inner">
+        <img class="logo-img" src="https://static.priceoye.pk/images/logo.svg" alt="logo">
+        <button class="login">Login</button>
+
+        <div class="hamburger-nav-inner1">
+          <img class="map-icon" src="https://static.priceoye.pk/images/user-dashboard/tracker.svg" alt="map-icon">
+          <p>Track my Order</p>
+        </div>
+
+        <div class="hamburger-nav-inner1">
+          <img class="complaint-icon" src="https://static.priceoye.pk/images/user-dashboard/complaint-white.svg"
+            alt="complaint-icon">
+          <p>Launch a Complaint</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <section class="accessories">
+    <div class="accessories-items">
+      <a href="#"><img src="https://static.priceoye.pk/images/home/mobiles.webp" alt="Mobile"></a>
+      <p>Mobiles</p>
+    </div>
+    <div class="accessories-items">
+      <a href="#"><img src="https://static.priceoye.pk/images/home/wireless-earbuds.webp" alt="earbuds"></a>
+      <p>Wireless Earbuds</p>
+    </div>
+    <div class="accessories-items">
+      <a href="#"><img src="https://static.priceoye.pk/images/home/smart-watches.webp" alt="Mobile"></a>
+      <p>Smart Watches</p>
+    </div>
+    <div class="accessories-items">
+      <a href="#"><img src="https://static.priceoye.pk/images/home/trimmers-shaver.webp" alt="Mobile"></a>
+      <p>Trimmer Shaver</p>
+    </div>
+    <div class="accessories-items">
+      <a href="#"><img src="https://static.priceoye.pk/images/home/power-banks.webp" alt="Mobile"></a>
+      <p>Power Banks</p>
+    </div>
+    <div class="accessories-items">
+      <a href="#"><img src="https://static.priceoye.pk/images/home/mobile-chargers.webp" alt="Mobile"></a>
+      <p>Wall Chargers</p>
+    </div>
+    <div class="accessories-items">
+      <a href="#"><img src="https://static.priceoye.pk/images/home/bluetooth-speakers.webp" alt="Mobile"></a>
+      <p>Bluetooth Speakers</p>
+    </div>
+    <div class="accessories-items">
+      <a href="#"><img src="https://static.priceoye.pk/images/home/tablets.webp" alt="Mobile"></a>
+      <p>Tablets</p>
+    </div>
+    <div class="accessories-items">
+      <a href="#"><img src="https://static.priceoye.pk/images/home/laptops.webp" alt="Mobile"></a>
+      <p>Laptops</p>
+    </div>
+  </section>
+
+  <script src="./main.js"></script>
+
+</body>
+
+</html>
