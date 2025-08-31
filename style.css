@@ -1,3 +1,17 @@
+:root {
+    --card-bg: #ffffff;
+    --page-bg: #F0FAF7;
+    --accent: #0ea5a1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a { text-decoration: none; }
+
 body {
     margin: 0;
     padding: 0;
@@ -5,10 +19,15 @@ body {
     font-family: Arial, sans-serif;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 .fa-solid {
     margin-top: 66px;
     margin-right: 20px;
-    color: gray;
+    color: #e7e7e7;
 }
 
 .logo {
@@ -61,9 +80,10 @@ body {
 
 .navbar .buttons button {
     margin-left: 5px;
-    padding: 12px 22px;
+    padding: 7px 22px;
     border: none;
-    border-radius: 6px;
+    outline: none;
+    border-radius: 8px;
     cursor: pointer;
 }
 
@@ -164,7 +184,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 18px;
-    margin-right: -10px;
+    margin-left: 10px;
 }
 
 .hamburger span {
@@ -197,9 +217,8 @@ body {
     background-color: #fff;
     color: #48AFFF;
     border: 1px solid #48AFFF;
-    padding: 11px 12px;
-    margin-right: 157px;
-    margin-left: 20px;
+    padding: 6px 0px;
+    margin: -10px 136px 5px 30px;
     border-radius: 6px;
     border: none;
 }
@@ -228,22 +247,225 @@ body {
 
 /* **************************************************************************************************************** */
 
-.accessories {
+.categories-wrapper {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 15px 50px;
+    /* space for arrows */
+}
+
+.categories {
+    display: flex;
+    gap: 58px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.category {
+    text-align: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.category:hover {
+    transform: scale(1.1);
+}
+
+.category img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.category span {
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f1f1f1;
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    user-select: none;
+}
+
+.arrow:hover {
+    background: #ddd;
+}
+
+.arrow.left {
+    left: 5px;
+}
+
+.arrow.right {
+    margin-left: 57em;
+}
+
+/* **************************************************************************************************************** */
+
+/* Earbuds Header */
+
+.earbuds-header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 10px;
+    padding: 13px 20px 0px 20px;
 }
 
-.accessories-items a img:hover {
-    border-bottom: #48AFFF !important;
-}
-.accessories-items a img {
-    width: 60px;
-    height: 55px;
+.earbuds-header button{
+    padding: 12px 20px;
+    color: #000;
+    background-color: #F0FAF7;
+    border: 1px solid #a2a2a2;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.accessories-items p {
-    font-size: 10px;
+/* Swiper */
+
+.swiper-hero {
+    padding: 20px;
+}
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+/* Navigation Slider */
+.swiper-button-next, 
+.swiper-button-prev {
+  color: #fff !important;
+  background: #6A7176;
+  width: 35px;
+  height: 35px;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* andar ka arrow */
+.swiper-button-next::after, 
+.swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Card styling */
+.card {
+    width: 270px;
+    height: 250px;
+    background: var(--card-bg);
+    border-radius: 5px;
+    box-shadow: 0 6px 20px rgba(12, 20, 30, 0.08);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card .image-wrap {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+.card img {
+    max-width: 80%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.card .title {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.35;
+    text-align: start;
+    color: #0f172a;
+    padding: 0 6px;
+    font-weight: 600;
+}
+
+.price-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 6px 6px 6px;
+}
+
+.price-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.current-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #063741;
+}
+
+.original-price {
+    font-size: 13px;
+    color: #ff0000;
+    text-decoration: line-through;
+}
+
+.discount {
+    background: #57f89781;
+    color: #19b95a;
+    font-weight: lighter;
+    font-size: 11px;
+    padding: 4px 8px;
+    margin-top: 28px;
+    border-radius: 16px;
+    white-space: nowrap;
+}
+
+/* Disabled navigation style */
+.swiper-button-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.earbuds-bottom {
+    background-color: #F1F3F6;
+    padding: 100px 0px 100px 0px;
+}
+
+.earbuds-bottom img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    max-height: 250px;
 }
