@@ -26,8 +26,8 @@ leftArrow.addEventListener('click', () => {
                                             // EARBUDS SLIDER \\
 // ---------------------------------------------------------------------------------------------------------
 
-// Products array
-const products = [
+// Earbuds Products array
+const earbudsProducts = [
   {
     id: 1,
     title: "Zentality E-29 Ultra Concise V True Wireless Earbuds",
@@ -126,33 +126,34 @@ const products = [
   }
 ];
 
-const wrapper = document.getElementById("product-wrapper");
+// Correct wrapper ID
+const earbudsWrapper = document.getElementById("earbuds-product-wrapper");
 
 // Render cards dynamically
-products.forEach(product => {
-    const slide = document.createElement("div");
-    slide.classList.add("swiper-slide");
+earbudsProducts.forEach(product => {
+    const earbudsSlide = document.createElement("div");
+    earbudsSlide.classList.add("swiper-slide", "earbuds-swiper-slide");
 
-    slide.innerHTML = `
-        <article class="card">
-          <div class="image-wrap">
+    earbudsSlide.innerHTML = `
+        <article class="earbuds-card">
+          <div class="earbuds-image-wrap">
             <img src="${product.image}" alt="${product.title}">
           </div>
-          <p class="title">${product.title}</p>
-          <div class="price-row">
-            <div class="price-left">
-              <span class="current-price">RS. ${product.currentPrice}</span>
-              <span class="original-price">RS. ${product.originalPrice}</span>
+          <p class="earbuds-title">${product.title}</p>
+          <div class="earbuds-price-row">
+            <div class="earbuds-price-left">
+              <span class="earbuds-current-price">RS. ${product.currentPrice}</span>
+              <span class="earbuds-original-price">RS. ${product.originalPrice}</span>
             </div>
-            <span class="discount">${product.discount}</span>
+            <span class="earbuds-discount">${product.discount}</span>
           </div>
         </article>
-      `;
-    wrapper.appendChild(slide);
+    `;
+    earbudsWrapper.appendChild(earbudsSlide);
 });
 
 // Swiper initialization with 2 rows
-const swiper = new Swiper('.swiper', {
+const earbudsSwiper = new Swiper('.earbuds-swiper', {
     slidesPerView: 4.5,
     spaceBetween: 15,
     grid: {
@@ -160,7 +161,149 @@ const swiper = new Swiper('.swiper', {
         fill: 'row',
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.earbuds-swiper-button-next',
+        prevEl: '.earbuds-swiper-button-prev',
+    }
+});
+
+// ---------------------------------------------------------------------------------------------------------
+
+// Watches Products array
+const watchesProducts = [
+  {
+    id: 1,
+    title: "Zentality Ultra Smart Smartwatch",
+    image: "./assets/watches/watch 1.webp" ,
+    currentPrice: 3859,
+    originalPrice: 5000,
+    discount: "23% OFF"
+  },
+  {
+    id: 2,
+    title: "Zero Luna Smart Watch",
+    image: "./assets/watches/watch 2.webp",
+    currentPrice: 22999,
+    originalPrice: 28000,
+    discount: "18% OFF"
+  },
+  {
+    id: 3,
+    title: "Samsung Galaxy Fit 3",
+    image: "./assets/watches/watch 3.webp",
+    currentPrice: 74999,
+    originalPrice: 89000,
+    discount: "16% OFF"
+  },
+  {
+    id: 4,
+    title: "Blaktron Storm S1 Smart Watch",
+    image: "./assets/watches/watch 4.webp",
+    currentPrice: 8999,
+    originalPrice: 11000,
+    discount: "18% OFF"
+  },
+  {
+    id: 5,
+    title: "Dany Thunder Smart Watch",
+    image: "./assets/watches/watch 5.webp",
+    currentPrice: 3859,
+    originalPrice: 5000,
+    discount: "23% OFF"
+  },
+  {
+    id: 6,
+    title: "Samsung Watch 8 44mm",
+    image: "./assets/watches/watch 6.webp",
+    currentPrice: 3859,
+    originalPrice: 5000,
+    discount: "23% OFF"
+  },
+  {
+    id: 7,
+    title: "Ultra Smart Watch with 7 Straps",
+    image: "./assets/watches/watch 7.webp",
+    currentPrice: 3859,
+    originalPrice: 5000,
+    discount: "23% OFF"
+  },
+  {
+    id: 8,
+    title: "Samsung Galaxy Watch 7 44mm",
+    image: "./assets/watches/watch 8.webp",
+    currentPrice: 3859,
+    originalPrice: 5000,
+    discount: "23% OFF"
+  },
+  {
+    id: 9,
+    title: "Apple Watch Series 10 Aluminnium (46mm)",
+    image: "./assets/watches/watch 9.webp",
+    currentPrice: 3859,
+    originalPrice: 5000,
+    discount: "23% OFF"
+  },
+  {
+    id: 10,
+    title: "Ultra Smart Watch with 10 Straps",
+    image: "./assets/watches/watch 10.webp",
+    currentPrice: 3859,
+    originalPrice: 5000,
+    discount: "23% OFF"
+  },
+  {
+    id: 11,
+    title: "HUAWEI Band 9",
+    image: "./assets/watches/watch 11.webp",
+    currentPrice: 3859,
+    originalPrice: 5000,
+    discount: "23% OFF"
+  },
+  {
+    id: 12,
+    title: "Apple Watch Ultra (49mm)",
+    image: "./assets/watches/watch 12.webp",
+    currentPrice: 3859,
+    originalPrice: 5000,
+    discount: "23% OFF"
+  }
+];
+
+// Correct wrapper ID
+const watchesWrapper = document.getElementById("watches-product-wrapper");
+
+// Render cards dynamically
+watchesProducts.forEach(product => {
+    const watchesSlide = document.createElement("div");
+    watchesSlide.classList.add("swiper-slide", "watches-swiper-slide");
+
+    watchesSlide.innerHTML = `
+        <article class="watches-card">
+          <div class="watches-image-wrap">
+            <img src="${product.image}" alt="${product.title}">
+          </div>
+          <p class="watches-title">${product.title}</p>
+          <div class="watches-price-row">
+            <div class="watches-price-left">
+              <span class="watches-current-price">RS. ${product.currentPrice}</span>
+              <span class="watches-original-price">RS. ${product.originalPrice}</span>
+            </div>
+            <span class="watches-discount">${product.discount}</span>
+          </div>
+        </article>
+    `;
+    watchesWrapper.appendChild(watchesSlide);
+});
+
+// Swiper initialization with 2 rows
+const watchesSwiper = new Swiper('.watches-swiper', {
+    slidesPerView: 4.5,
+    spaceBetween: 15,
+    grid: {
+        rows: 2,
+        fill: 'row',
+    },
+    navigation: {
+        nextEl: '.watches-swiper-button-next',
+        prevEl: '.watches-swiper-button-prev',
     }
 });

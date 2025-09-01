@@ -318,16 +318,17 @@ html, body {
 
 /* **************************************************************************************************************** */
 
+
 /* Earbuds Header */
 
-.earbuds-header {
+.earbuds-header , .watches-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 20px 0px 20px;
+    padding: 0px 20px 0px 20px;
 }
 
-.earbuds-header button{
+.earbuds-header button, .watches-header button{
     padding: 12px 20px;
     color: #000;
     background-color: #F0FAF7;
@@ -338,38 +339,42 @@ html, body {
 
 /* Swiper */
 
-.swiper-hero {
+.earbuds-swiper-hero, .watches-swiper-hero {
     padding: 20px;
 }
-.swiper {
+.earbuds-swiper, .watches-swiper {
     width: 100%;
+    /* padding-left: 20px;
+    padding-right: 20px; */
 }
 
-.swiper-slide {
+.earbuds-swiper-slide, .watches-swiper-slide {
     display: flex;
     justify-content: center;
 }
 
 /* Navigation Slider */
-.swiper-button-next, 
-.swiper-button-prev {
+.earbuds-swiper-button-next, .earbuds-swiper-button-prev,
+.watches-swiper-button-next, .watches-swiper-button-prev {
   color: #fff !important;
   background: #6A7176;
   width: 35px;
   height: 35px;
   border-radius: 3px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  top: 54%;
+  transform: translateY(-50%);
 }
 
 /* andar ka arrow */
-.swiper-button-next::after, 
-.swiper-button-prev::after {
+.earbuds-swiper-button-next::after, .earbuds-swiper-button-prev::after,
+.watches-swiper-button-next::after, .watches-swiper-button-prev::after {
   font-size: 20px;
   font-weight: bold;
 }
 
 /* Card styling */
-.card {
+.earbuds-card, .watches-card{
     width: 270px;
     height: 250px;
     background: var(--card-bg);
@@ -382,10 +387,9 @@ html, body {
     gap: 12px;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
 }
 
-.card .image-wrap {
+.earbuds-card .earbuds-image-wrap, .watches-card .watches-image-wrap {
     width: 160px;
     height: 160px;
     display: flex;
@@ -394,14 +398,14 @@ html, body {
     margin-top: -20px;
 }
 
-.card img {
+.earbuds-card img, .watches-card img {
     max-width: 80%;
     max-height: 100%;
     object-fit: contain;
     display: block;
 }
 
-.card .title {
+.earbuds-card .earbuds-title, .watches-card .watches-title {
     margin: 0;
     font-size: 13px;
     line-height: 1.35;
@@ -411,7 +415,7 @@ html, body {
     font-weight: 600;
 }
 
-.price-row {
+.earbuds-price-row, .watches-price-row {
     width: 100%;
     display: flex;
     align-items: center;
@@ -420,25 +424,25 @@ html, body {
     padding: 0 6px 6px 6px;
 }
 
-.price-left {
+.earbuds-price-left, .watches-price-left {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.current-price {
+.earbuds-current-price, .watches-current-price {
     font-size: 18px;
     font-weight: 700;
     color: #063741;
 }
 
-.original-price {
+.earbuds-original-price, .watches-original-price {
     font-size: 13px;
     color: #ff0000;
     text-decoration: line-through;
 }
 
-.discount {
+.earbuds-discount, .watches-discount {
     background: #57f89781;
     color: #19b95a;
     font-weight: lighter;
@@ -450,7 +454,7 @@ html, body {
 }
 
 /* Disabled navigation style */
-.swiper-button-disabled {
+.earbuds-swiper-button-disabled, .watches-swiper-button-disabled {
     opacity: 0.3;
     pointer-events: none;
 }
